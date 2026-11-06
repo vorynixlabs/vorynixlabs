@@ -15,7 +15,29 @@ TestForge is a software-testing operations platform focused on repeatable execut
 - baseline comparisons and regression budgets
 - report generation, artifact handling, and audit trails
 
-The production repository remains private. A sanitized public overview is available in [testforge-platform-demo](https://github.com/vorynixlabs/testforge-platform-demo).
+The production repository remains private. The public
+[testforge-platform-demo](https://github.com/vorynixlabs/testforge-platform-demo)
+contains independently written, sanitized examples with tests and CI.
+
+## Featured public project
+
+### Artifact Guard
+
+Artifact Guard is a zero-dependency Node.js tool for detecting credentials in
+test logs and reports before CI uploads them. It combines explicit credential
+rules with conservative entropy detection, returns masked findings, supports
+JSON output and redaction, and uses CI-friendly exit codes.
+
+```bash
+git clone https://github.com/vorynixlabs/testforge-platform-demo.git
+cd testforge-platform-demo
+npm test
+npm run scan:example
+```
+
+The example is tested on Node.js 20 and 22. Its fixtures are synthetic, and the
+public repository contains no production source, private configuration, or
+credentials.
 
 ## Engineering principles
 
@@ -34,4 +56,6 @@ The production repository remains private. A sanitized public overview is availa
 
 ## Repository activity
 
-Public repositories contain architecture notes and sanitized examples. Ongoing platform implementation, pull requests, and CI validation continue in the private TestForge repository.
+Public repositories contain runnable tools, architecture notes, and sanitized
+examples. Ongoing platform implementation, pull requests, and CI validation
+continue in the private TestForge repository.
