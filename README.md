@@ -21,6 +21,25 @@ contains independently written, sanitized examples with tests and CI.
 
 ## Featured public project
 
+### Query Plan Guard
+
+Query Plan Guard is a zero-dependency Node.js CLI and library for detecting
+PostgreSQL query-plan regressions in CI. It reads saved `EXPLAIN (FORMAT JSON)`
+files, reports denied plan nodes, excessive planner cost, and unexpected row
+estimates, and supports intentional scan allowlists for small relations.
+
+```bash
+git clone https://github.com/vorynixlabs/testforge-platform-demo.git
+cd testforge-platform-demo
+npm test
+npm run plan:example
+```
+
+The public example includes synthetic plans, policy configuration, text and JSON
+output, CI-friendly exit codes, 23 automated tests, and Node.js 20/22 validation.
+It never connects to a database and contains no production queries or private
+configuration.
+
 ### Artifact Guard
 
 Artifact Guard is a zero-dependency Node.js tool for detecting credentials in
@@ -35,9 +54,10 @@ npm test
 npm run scan:example
 ```
 
-The example is tested on Node.js 20 and 22. Its fixtures are synthetic, and the
-public repository contains no production source, private configuration, or
-credentials.
+Artifact Guard remains available in the same repository for detecting credentials
+captured in test logs before CI publishes them. Both tools use synthetic fixtures,
+and the public repository contains no production source, private configuration,
+or credentials.
 
 ## Engineering principles
 
@@ -53,6 +73,7 @@ credentials.
 - quarantine ownership and review deadlines
 - execution history and baseline persistence
 - release-quality summaries for CI pipelines
+- additional standalone test-engineering tools with reproducible examples
 
 ## Repository activity
 
